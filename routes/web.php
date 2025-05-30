@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::prefix('appointment')->group(function () {
-        Route::get('/', [AppointmentController::class, 'index'])->name('index.appointment');
+        Route::get('/', [AppointmentController::class, 'index'])->name('index.appointments');
     });
 
     Route::prefix('profile')->group(function () {
