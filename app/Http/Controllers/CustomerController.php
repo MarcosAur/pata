@@ -11,4 +11,8 @@ class CustomerController extends Controller
         $customers = Customer::all();
         return view('customer.index', compact(['customers']));
     }
+
+    public function store(Request $request){
+        dd($request->all());
+    }
 }

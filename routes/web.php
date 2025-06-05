@@ -12,6 +12,7 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('customer')->group(function () {
         Route::get('/', [CustomerController::class, 'index'])->name('index.customers');
+        Route::post('/', [CustomerController::class, 'store'])->name('store.customers');
     });
 
     Route::prefix('appointment')->group(function () {
