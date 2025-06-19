@@ -10,8 +10,9 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-    Route::prefix('customer')->group(function () {
+    Route::prefix('pacientes')->group(function () {
         Route::get('/', [CustomerController::class, 'index'])->name('index.customers');
+        Route::get('/cadastrar', [CustomerController::class, 'create'])->name('create.customers');
         Route::post('/', [CustomerController::class, 'store'])->name('store.customers');
     });
 
