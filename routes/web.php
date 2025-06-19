@@ -16,8 +16,10 @@ Route::middleware('auth')->group(function () {
         Route::post('/', [CustomerController::class, 'store'])->name('store.customers');
     });
 
-    Route::prefix('appointment')->group(function () {
+    Route::prefix('agendamentos')->group(function () {
         Route::get('/', [AppointmentController::class, 'index'])->name('index.appointments');
+        Route::get('/cadastrar', [AppointmentController::class, 'create'])->name('create.appointments');
+        Route::post('/', [AppointmentController::class, 'store'])->name('store.appointments');
     });
 
     Route::prefix('profile')->group(function () {
